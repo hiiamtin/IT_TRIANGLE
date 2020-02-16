@@ -28,12 +28,12 @@ function draw() {
 	var C= document.getElementById("numberC").value;
 	if (A===""||B===""||C===""||A.toString().indexOf('.') != -1
 		||B.toString().indexOf('.') != -1
-		||C.toString().indexOf('.') != -1){alert("!ERROR!\nInput Fail!");}
+		||C.toString().indexOf('.') != -1){swal("!ERROR!", "Input Fail! Please fill 3 sides completely.", "error");}
 	else{
 		A = parseInt(A,10);
 		B = parseInt(B,10);
 		C = parseInt(C,10);
-		if(A<=0||B<=0||C<=0||A>99||B>99||C>99){alert("!ERROR!\nInput Fail!");}
+		if(A<=0||B<=0||C<=0||A>99||B>99||C>99){swal("!ERROR!", "Input Fail! The side can be 0 - 99.", "error");}
 		else{
 			document.getElementById("typeTri").innerHTML = isType(A,B,C);
 			if (canvas.getContext){
