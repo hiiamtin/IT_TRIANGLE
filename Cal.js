@@ -33,7 +33,7 @@ function draw() {
 		A = parseInt(A,10);
 		B = parseInt(B,10);
 		C = parseInt(C,10);
-		if(A<=0||B<=0||C<=0||A>99||B>99||C>99){swal("!ERROR!", "Input Fail! The side can be 0 - 99.", "error");}
+		if(A<=0||B<=0||C<=0||A>99||B>99||C>99){swal("!ERROR!", "Input Fail! The side can be 1 - 99.", "error");}
 		else{
 			document.getElementById("typeTri").innerHTML = isType(A,B,C);
 			if (canvas.getContext){
