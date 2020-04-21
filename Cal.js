@@ -26,9 +26,10 @@ function draw() {
 	var A = document.getElementById("numberA").value;
 	var B = document.getElementById("numberB").value;
 	var C= document.getElementById("numberC").value;
-	if (A===""||B===""||C===""||A.toString().indexOf('.') != -1
-		||B.toString().indexOf('.') != -1
-		||C.toString().indexOf('.') != -1){swal("!ERROR!", "Input Fail! Please fill 3 sides completely.", "error");}
+	if (A===""||B===""||C===""){swal("!ERROR!", "Input Fail! Please fill 3 sides completely.", "error");}
+	else if(A.toString().indexOf('.') != -1||B.toString().indexOf('.') != -1||C.toString().indexOf('.') != -1){
+		swal("!ERROR!", "Input Fail! Please fill integer only.", "error");
+	}
 	else{
 		A = parseInt(A,10);
 		B = parseInt(B,10);
@@ -41,7 +42,7 @@ function draw() {
     			context.clearRect(0, 0, canvas.width, canvas.height);
   				context.fillStyle = "#FFFFFF";
   				context.fillRect(0, 0, canvas.width, canvas.height);
-				let scale = 100/Math.pow(A+B+C,0.6);
+				let scale = 100/Math.pow(A+B+C,0.65);
 				A = (A*scale);
 				B = (B*scale);
 				C = (C*scale);
